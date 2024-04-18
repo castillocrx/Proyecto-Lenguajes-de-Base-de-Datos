@@ -19,7 +19,7 @@
         }
 
         require_once "DL/factura.php";
-        require_once "DL/cliente.php";
+        require_once "DL/usuario.php";
         require_once "DL/producto.php";
 
         $producto = getProductoById($id);
@@ -29,9 +29,9 @@
             exit();
         }
 
-        $cliente = getClienteByCorreo($_SESSION['correo']);
+        $usuario = getusuarioByCorreo($_SESSION['correo']);
 
-        if (!$cliente) {
+        if (!$usuario) {
             header("Location: carrito.php");
             exit();
         }
@@ -40,10 +40,10 @@
 
         $fecha = date('Y-m-d');
 
-        if (crearFactura($cliente['idCliente'], $producto['id'], $fecha, $precioTotal)) {
+        if (crearFactura($usuario['idusuario'], $producto['id'], $fecha, $precioTotal)) {
             echo "<h1 class='display-4'>Detalles de la Compra</h1>";
-            echo "<p><strong>Nombre del Cliente:</strong> {$cliente['nombre']}</p>";
-            echo "<p><strong>Correo del Cliente:</strong> {$cliente['correo']}</p>";
+            echo "<p><strong>Nombre del usuario:</strong> {$usuario['nombre']}</p>";
+            echo "<p><strong>Correo del usuario:</strong> {$usuario['correo']}</p>";
             echo "<p><strong>Nombre del Producto:</strong> {$producto['nombre']}</p>";
             echo "<p><strong>Descripción del Producto:</strong> {$producto['descripcion']}</p>";
             echo "<img src='{$producto['imagen']}' alt='Imagen del producto' class='img-thumbnail' height='100'>";

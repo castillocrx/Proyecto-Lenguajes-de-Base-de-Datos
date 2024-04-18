@@ -12,13 +12,13 @@ include_once "include/template/header.php";
         session_start();
 
         if (isset($_SESSION['correo'])) {
-            require_once "DL/cliente.php";
-            $cliente = getClienteByCorreo($_SESSION['correo']);
+            require_once "DL/usuario.php";
+            $usuario = getUsuarioByCorreo($_SESSION['correo']);
 
-            if ($cliente) {
+            if ($usuario) {
                 echo "";
             } else {
-                echo "<p>Error al obtener la información del cliente</p>";
+                echo "<p>Error al obtener la información del usuario</p>";
             }
         } else {
             header("Location: login.php");

@@ -19,22 +19,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errores)) {
         // echo "Ingreso datos a base de datos";
-        require_once "DL/cliente.php";
-        $query = "select idCliente, nombre, correo, direccion, telefono, password from clientes where correo = '$correo'";
+        require_once "DL/usuario.php";
+        $query = "select idUsuario, nombre, correo, direccion, password, telefono from usuarios where correo = '$correo'";
         $mySession = getObject2($query);
 
         if($mySession != null){
+            // Verificar la contraseña utilizando password_verify
             $auth = password_verify($contrasena, $mySession['PASSWORD']);
+        
             if($auth){
                 session_start();
                 $_SESSION['correo'] = $mySession['CORREO'];
-                $_SESSION['idCliente'] = $mySession['IDCLIENTE'];
+                $_SESSION['idUsuario'] = $mySession['IDUSUARIO'];
                 $_SERVER['login'] = true;
                 header("Location: cuenta.php");
-            }else{
-                $errores[] = "No se pudo iniciar sesión";
+            } else {
+                $errores[] = "Contraseña incorrecta"; 
             }
-        }else{
+        } else {
             $errores[] = "Usuario no existe";
         }
     }
@@ -64,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" name="contrasena" id="contrasena" placeholder="Digite su contraseña">
             </div>
             <input type="submit" class="formulario__submit" style='background-color: #FF4500' value="Ingreso"><br>
-            <a href="datosCliente.php"  class="boton-admin" style='background-color: #FF4500' rel="noopener noreferrer">Agregar cuenta</a>
+            <a href="datosusuario.php"  class="boton-admin" style='background-color: #FF4500' rel="noopener noreferrer">Agregar cuenta</a>
         </form>
     </div>
 

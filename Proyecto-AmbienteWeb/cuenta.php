@@ -59,22 +59,22 @@
 
         <?php
         if (isset($_SESSION['correo'])) {
-            require_once "DL/cliente.php";
-            $cliente = getClienteByCorreo($_SESSION['correo']);
+            require_once "DL/usuario.php";
+            $usuario = getUsuarioByCorreo($_SESSION['correo']);
 
-            if ($cliente) {
+            if ($usuario) {
                 echo "<div class='producto'>";
-                echo "<h1 class='h3'>Hola, " . $cliente['NOMBRE'] . "!</h1>";
-                echo "<p class='lead'>Correo: " . $cliente['CORREO'] . "</p>";
-                echo "<p class='text-muted'>Dirección: " . $cliente['DIRECCION'] . "</p>";
-                echo "<p>Teléfono: " . $cliente['TELEFONO'] . "</p>";
+                echo "<h1 class='h3'>Hola, " . $usuario['NOMBRE'] . "!</h1>";
+                echo "<p class='lead'>Correo: " . $usuario['CORREO'] . "</p>";
+                echo "<p class='text-muted'>Dirección: " . $usuario['DIRECCION'] . "</p>";
+                echo "<p>Teléfono: " . $usuario['TELEFONO'] . "</p>";
                 echo "<button class='btn btn-primary boton-admin' style='background-color: #FF4500' id='cerrarSesionBtn'>Cerrar Sesión</button>";
                 if (isset($_SESSION['correo']) && $_SESSION['correo'] === 'admin@gmail.com') {
                     echo "<a href='verUsuarios.php' class='boton-admin' style='background-color: #FF4500'>Ver Usuarios</a></th>";
                 } 
                 echo "</div>";
             } else {
-                echo "<p class='text-danger'>Error al obtener la información del cliente</p>";
+                echo "<p class='text-danger'>Error al obtener la información del usuario</p>";
             }
         } else {
             header("Location: login.php");

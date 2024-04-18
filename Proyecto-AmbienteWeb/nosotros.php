@@ -19,7 +19,7 @@ include_once "include/template/header.php";
             <div>
                 <h1>Nuestros Productos</h1>
             </div>
-            <p>Burger Shop ofrece una variedad de hamburguesas para todos los clientes. Podrás encontrar descuentos disponibles en cualquier momento. </p>
+            <p>Burger Shop ofrece una variedad de hamburguesas para todos los usuarios. Podrás encontrar descuentos disponibles en cualquier momento. </p>
         </div>
         <div class="texto">
             <div>
