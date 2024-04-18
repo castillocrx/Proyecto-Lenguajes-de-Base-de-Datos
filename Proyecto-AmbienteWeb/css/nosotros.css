@@ -1,0 +1,86 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos del Encabezado */
+
+.bienv-pos {
+    text-align: center;
+}
+
+.bienvenido {
+    font-size: 40px;
+    color:  #ff6f00;
+}
+
+/* Estilos del Logo */
+
+.pos-logo-nosotros {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo-nosotros {
+    max-width: 100%;
+}
+
+/* Estilos del Texto Principal */
+
+.nuestra-tienda {
+    margin-top: 20px;
+}
+
+.parrafo {
+    font-size: 18px;
+    color: black;
+    line-height: 1.5;
+}
+
+/* Estilos de la Sección de Información */
+
+.info-tienda {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.texto {
+    flex: 1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #ff6f00;
+}
+
+p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.5;
+}
+
+.boton-admin {
+    display: inline-block;
+    background-color: #FF4500;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.boton-admin:hover {
+    background-color: #ff6f00;
+}

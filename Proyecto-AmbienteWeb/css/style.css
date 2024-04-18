@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --primario: #3e7ff7;
+    --secundario: black;
+    --blanco: white;
+    --fuentePrincipal: 'Merriweather', serif;
+    --primarioOscuro: rgba(0, 0, 153, 0.712);
+    --gris: #ccc;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+
+}
+
+/* ---- Header ----*/
+header {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    background-color: var(--secundario);
+    justify-content: space-between;
+    min-height: 70px;
+}
+
+
+
+.logo {
+    display: flex;
+    height: 50px;
+
+}
+
+.pos-logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.header-pages {
+    display: flex;
+    justify-items: end;
+    align-items: center;
+}
+
+.nombre-tienda {
+    color: var(--blanco);
+    font-size: 25px;
+    margin-inline: 25px;
+    font-family: var(--fuentePrincipal);
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--fuentePrincipal);
+}
+
+header nav a {
+    margin-inline: 25px;
+    color: white;
+}
+
+header nav a:hover {
+    color: var(--primario);
+}
+
+/*funcion util a la hora de reducir el tamaño de la pag*/
+@media (max-width:700px) {
+    header {
+        flex-direction: column;
+    }
+
+    header nav {
+        padding: 20px 0px;
+    }
+}
+
+/* ---- Main ----*/
+
+.bienvenido {
+    font-size: 60px;
+    font-family: var(--fuentePrincipal);
+}
+
+.bienv-pos {
+    display: flex;
+    justify-content: center;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*     column-gap: 2rem;
+    row-gap: 2rem; */
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* hamburguesas */
+
+.tema {
+    padding: 15px;
+
+}
+
+.hamburguesa-nombre {
+    font-size: 26px;
+}
+
+.precio {
+    font-size: 20px;
+    color: var(--secundario);
+}
+
+.hamburguesa-nombre,
+.precio {
+    font-family: var(--fuentePrincipal);
+    margin: 15px;
+    text-align: center;
+    line-height: 1rem;
+
+}
+
+.ham-imagen {
+    height: 120px;
+
+}
+
+.pos-img {
+    display: flex;
+    justify-content: center;
+}
+
+.verMas {
+    margin-top: 50%;
+    font-size: 30px;
+    font-family: var(--fuentePrincipal);
+}
+
+
+/* ---- Footer ----*/
+.footer {
+    background-color: var(--secundario);
+    padding: 1rem 0;
+    margin-top: 10%;
+}
+
+.footer-texto {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    text-align: center;
+}
+
+
+/* ---- MAIN PRODUCTOD PHP ----*/
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.producto {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid var(--gris);
+    border-radius: 10px;
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+}
+
+.producto img {
+    margin-bottom: 10px;
+    margin: 10%;
+}
+
+.boton-admin {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--primario);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.boton-añadir:hover {
+    background-color: var(--primarioOscuro);
+}
+
+/* ---- AÑADIR PRODUCTOS PHP ----*/
+
+.contenedor-añadirP {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pos-h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: var(--fuentePrincipal);
+}
+
+.productos {
+    background-color: #f9f9f9;
+    border: 1px solid var(--gris);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.errores {
+    color: #ff0000;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: var(--fuentePrincipal);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--blanco);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.formulario__submit {
+    background-color: var(--primario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.formulario__submit:hover {
+    background-color: var(--primarioOscuro);
+}
+
+/* ---- MOSTRAR PRODUCTOS PHP ----*/
+.productos th,
+.productos td {
+    border: 1px solid var(--gris);
+    padding: 10px;
+    text-align: left;
+}
+
+.productos th {
+    background-color: var(--blanco);
+}
+
+/* ---- NOSOTROS PHP ----*/
+
+.info-tienda, .nuestra-tienda {
+    margin: 2%;
+    background-color: #f9f9f9;
+    border: 1px solid var(--gris);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.texto {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid var(--gris);
+    border-radius: 10px;
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+}
+
+
+.parrafo{
+    font-size: 20px;
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-style: italic;
+    margin-inline: 10%;
+}
+
+.logo-nosotros{
+    display: flex;
+    
+
+}
+
+.pos-logo-nosotros {
+    display: flex;
+    justify-content: center;
+}
